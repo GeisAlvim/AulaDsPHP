@@ -18,7 +18,9 @@
 
         $linguagem = "PHP";
         echo 'Programar em $linguagem é muito legal <br>';
-        echo "Programar em $linguagem é muito legal <br>";
+        echo "Programar em $linguagem é muito legal <br><br><br>";
+
+        echo " \"Eu estou aprendendo PHP!\" ";
 
     ?>
 </body>
