@@ -6,38 +6,49 @@
     <title>Ex3_Calculadora</title>
 </head>
 <body>
-    <?php 
-         $num1 = $_POST["Num1"];
-         $num2 = $_POST["Num2"];
-     
-         switch($nota){
-             case 10:
-                 echo "Nota A";
-                 break;
-             
-             case 9:
-                 echo "Nota B";
-                 break;
-     
-             case 8:
-                 echo "Nota C";
-                 break;
-     
-             case 7:
-                 echo "Nota C";
-                 break;
-             
-             case 6:
-                 echo "Nota D";
-                 break;
-     
-             case 5:
-                 echo "Nota D";
-                 break;
-     
-             case ($nota>0 && $nota<=4);
-                 echo "Nota E";
-                 break;
+<form action="" method="post">
+  <label for="num1">Número 1:</label>
+  <input type="number" id="num1" name="num1"><br><br>
+  <label for="operador">Operador:</label>
+  <select id="operador" name="operador">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select><br><br>
+  <label for="num2">Número 2:</label>
+  <input type="number" id="num2" name="num2"><br><br>
+  <input type="submit" value="Calcular"><br><br><br>
+</form>
+<?php
+    
+   $num1 = $_POST["num1"];
+   $operador = $_POST["operador"];
+   $num2 = $_POST["num2"];
+
+  switch ($operador) {
+    case '+':
+      $resultado = $num1 + $num2;
+      break;
+    case '-':
+      $resultado = $num1 - $num2;
+      break;
+    case '*':
+      $resultado = $num1 * $num2;
+      break;
+    case '/':
+      if ($num2 != 0) {
+        $resultado = $num1 / $num2;
+      } else {
+        $resultado = "Erro: Divisão por zero!";
+      }
+      break;
+    default:
+      $resultado = "Erro: Operador inválido!";
+  }
+
+  echo "Resultado: $resultado";
     ?>
+
 </body>
 </html>
